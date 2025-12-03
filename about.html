@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Lumen Search - Connecting the World to Knowledge</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #1E2A38; color: #E6E6FA;"> 
+    
+    <aside id="side-nav" style="
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initial Hidden State */
+        width: 250px;
+        height: 100%;
+        background-color: #1E2A38; /* Primary Dark Blue */
+        color: #E6E6FA;
+        padding-top: 60px; 
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+        transition: left 0.3s ease; 
+        box-sizing: border-box;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+            <h3 style="margin: 0; font-size: 20px;">Explore Categories</h3>
+            <button onclick="toggleNav()" style="
+                background: none; 
+                border: none; 
+                color: #E6E6FA; 
+                font-size: 30px; 
+                cursor: pointer;
+                line-height: 1;
+                padding: 0;
+            ">
+                &times;
+            </button>
+        </div>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 5px;">
+                <a href="index.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">🏠 Home Search</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="resources.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📘 Learning Resources</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="#" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">Contact Team</a>
+            </li>
+        </ul>
+    </aside>
+
+    <header style="background-color: #1E2A38; color: #E6E6FA; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">
+        
+        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 20px;" 
+             onclick="toggleNav()">
+            ☰
+        </div>
+        
+        <img src="lumen.png" alt="lumen" style="height: 60px; border-radius: 60px; margin-right: 10px">
+        <div style="cursor: pointer; flex-grow: 1;">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                <h1 style="font-size: 28px; margin: 0; color: #E6E6FA;">Lumen Search</h1>
+                <p style="font-size: 14px; margin: 0; opacity: 0.8;">connecting the world to knowledge</p>
+            </a>
+        </div>
+        
+        <nav style="flex-shrink: 0;">
+            <a href="#" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Subjects</a>
+            <a href="resources.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Resources</a>
+            <a href="#" style="color: #E6E6FA; text-decoration: underline; margin-left: 25px; font-weight: bold;">About</a>
+        </nav>
+    </header>
+
+    <main style="padding: 40px 10%; min-height: 80vh;">
+        <h2 style="font-size: 38px; color: #8A2BE2; /* Violet Heading */ margin-bottom: 5px; text-align: center;">About Lumen Search</h2>
+        <p style="text-align: center; color: #B0C4DE; /* Light gray for body text */ margin-bottom: 40px; font-size: 18px;">**Democratizing education**—giving everyone on the planet access to free, quality learning.</p>
+        
+        <hr style="border-top: 1px solid #2C3E50; border-bottom: none;"/>
+
+        <section style="margin-bottom: 50px; background-color: #2C3E50; /* Secondary Dark Shade */ padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+            <h3 style="color: #8A2BE2; /* Violet Section Heading */ font-size: 26px; border-bottom: 2px solid #8A2BE2; padding-bottom: 10px; margin-top: 0;">💡 The Vision: Education Without Borders</h3>
+            <p style="color: #E6E6FA; line-height: 1.6;">
+                **Lumen Search** was founded on the radical belief that access to knowledge should not be gated by geography, wealth, or status. We are a non-profit technology collective, established in **2020** by a group of educators and software engineers who were tired of seeing valuable educational content hidden behind paywalls or buried under commercial search results.
+            </p>
+            <p style="color: #E6E6FA; line-height: 1.6;">
+                Our goal is singular: to be the **world's premier educational search engine**. We curate, index, and surface only the highest-quality, **peer-reviewed, open-source, and free learning materials** available globally, ensuring that any human with an internet connection can pursue any subject, from basic literacy to advanced astrophysics, at no cost.
+            </p>
+        </section>
+
+        <hr style="border-top: 1px solid #2C3E50; border-bottom: none;"/>
+
+        <section style="margin-bottom: 50px; background-color: #2C3E50; /* Secondary Dark Shade */ padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+            <h3 style="color: #8A2BE2; /* Violet Section Heading */ font-size: 26px; border-bottom: 2px solid #8A2BE2; padding-bottom: 10px; margin-top: 0;">🧠 Intelligent Curation and Filtering</h3>
+            <p style="color: #E6E6FA; line-height: 1.6;">
+                Lumen Search is more than just a filter; it's an **intelligent curation system**. Our proprietary algorithms evaluate search results based on academic merit, clarity, pedagogical soundness, and non-commercial integrity, effectively cutting through the noise of the commercial internet.
+            </p>
+            <h4 style="color: #8A2BE2; /* Violet Subheading */ margin-top: 25px;">What Makes Lumen Unique:</h4>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 15px; padding-left: 20px; position: relative; color: #E6E6FA;"><span style="color: #8A2BE2; /* Violet Checkmark */ font-weight: bold; position: absolute; left: 0;">🌐</span> **Global Focus:** We prioritize multilingual and culturally relevant resources for learners in every continent.</li>
+                <li style="margin-bottom: 15px; padding-left: 20px; position: relative; color: #E6E6FA;"><span style="color: #8A2BE2; /* Violet Checkmark */ font-weight: bold; position: absolute; left: 0;">✅</span> **Zero Advertisements:** Our platform is strictly non-commercial, ensuring an ad-free, distraction-free environment conducive to deep learning.</li>
+                <li style="margin-bottom: 15px; padding-left: 20px; position: relative; color: #E6E6FA;"><span style="color: #8A2BE2; /* Violet Checkmark */ font-weight: bold; position: absolute; left: 0;">⚡</span> **Rapid Indexing:** We partner with leading academic institutions and open-source learning platforms to index new, high-quality content almost instantaneously.</li>
+                <li style="margin-bottom: 15px; padding-left: 20px; position: relative; color: #E6E6FA;"><span style="color: #8A2BE2; /* Violet Checkmark */ font-weight: bold; position: absolute; left: 0;">📐</span> **Curriculum Mapping:** Our results can be filtered and categorized by common educational standards and levels, from K-12 to post-graduate studies.</li>
+            </ul>
+        </section>
+
+        <hr style="border-top: 1px solid #2C3E50; border-bottom: none;"/>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #2C3E50;">
+            <p style="font-style: italic; color: #8A2BE2; /* Violet Quote Text */">
+                "The only true security in life comes from knowing that every single day you are becoming better and smarter."
+            </p>
+        </div>
+
+    </main>
+
+    <footer style="background-color: #1E2A38; color: #E6E6FA; text-align: center; padding: 20px; position: relative; width: 100%; border-top: 1px solid #2C3E50;">
+        <p style="margin: 0; font-size: 14px;">&copy; 2025 Lumen Search | A non-profit collective dedicated to Free Global Education</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('side-nav');
+            if (nav.style.left === '-250px' || nav.style.left === '') {
+                nav.style.left = '0px'; // Slide in
+            } else {
+                nav.style.left = '-250px'; // Slide out
+            }
+        }
+    </script>
+
+</body>
+</html>

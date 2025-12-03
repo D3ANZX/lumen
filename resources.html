@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Search - Educational Resources</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #1E2A38; color: #E6E6FA;"> 
+    
+    <aside id="side-nav" style="
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initial Hidden State */
+        width: 250px;
+        height: 100%;
+        background-color: #1E2A38; /* Primary Dark Blue */
+        color: #E6E6FA;
+        padding-top: 60px; 
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+        transition: left 0.3s ease; 
+        box-sizing: border-box;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+            <h3 style="margin: 0; font-size: 20px;">Explore Categories</h3>
+            <button onclick="toggleNav()" style="
+                background: none; 
+                border: none; 
+                color: #E6E6FA; 
+                font-size: 30px; 
+                cursor: pointer;
+                line-height: 1;
+                padding: 0;
+            ">
+                &times;
+            </button>
+        </div>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 5px;">
+                <a href="index.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">🏠 Home Search</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="#" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">Science & Math</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="#" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">Technology & Programming</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="about.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">About Lumen</a>
+            </li>
+        </ul>
+    </aside>
+
+    <header style="background-color: #1E2A38; color: #E6E6FA; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">
+        
+        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 20px;" 
+             onclick="toggleNav()">
+            ☰
+        </div>
+        
+        <img src="lumen.png" alt="lumen" style="height: 60px; border-radius: 60px; margin-right: 10px">
+        <div style="cursor: pointer; flex-grow: 1;">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                <h1 style="font-size: 28px; margin: 0; color: #E6E6FA;">Lumen Search</h1>
+                <p style="font-size: 14px; margin: 0; opacity: 0.8;">connecting the world to knowledge</p>
+            </a>
+        </div>
+        
+        <nav style="flex-shrink: 0;">
+            <a href="subjects.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Subjects</a>
+            <a href="resources.html" style="color: #E6E6FA; text-decoration: underline; margin-left: 25px; font-weight: bold;">Resources</a>
+            <a href="about.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">About</a>
+        </nav>
+    </header>
+
+    <main style="padding: 40px 50px; min-height: 80vh;">
+        <h2 style="font-size: 32px; color: #8A2BE2; /* Violet Heading */ margin-bottom: 30px; text-align: center;">📚 Free Learning Materials by Level</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            
+            <a href="#" style="
+                text-decoration: none;
+                width: 300px; 
+                background-color: #2C3E50; /* Secondary Dark Shade */
+                border-radius: 12px; 
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 40px; color: #ffc107;">🧸</span>
+                <h3 style="color: #8A2BE2; /* Violet Accent on Card Title */ margin-top: 15px; font-size: 22px;">Kinder Learning Materials</h3>
+                <p style="color: #B0C4DE; /* Light Gray Text */ font-size: 14px;">Foundation skills: letters, numbers, colors, and basic concepts.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 300px; 
+                background-color: #2C3E50; 
+                border-radius: 12px; 
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 40px; color: #28a745;">🎒</span>
+                <h3 style="color: #8A2BE2; margin-top: 15px; font-size: 22px;">Elementary Learning Materials</h3>
+                <p style="color: #B0C4DE; font-size: 14px;">Grades 1-5: reading comprehension, basic math, and science.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 300px; 
+                background-color: #2C3E50; 
+                border-radius: 12px; 
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 40px; color: #fd7e14;">🔬</span>
+                <h3 style="color: #8A2BE2; margin-top: 15px; font-size: 22px;">Middle School (Grades 6-7)</h3>
+                <p style="color: #B0C4DE; font-size: 14px;">Introduction to specialized subjects and complex problem-solving.</p>
+            </a>
+            
+            <a href="#" style="
+                text-decoration: none;
+                width: 300px; 
+                background-color: #2C3E50; 
+                border-radius: 12px; 
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 40px; color: #6f42c1;">📐</span>
+                <h3 style="color: #8A2BE2; margin-top: 15px; font-size: 22px;">Junior High School (Grade 8-10)</h3>
+                <p style="color: #B0C4DE; font-size: 14px;">Core curriculum, foreign languages, and pre-advanced track studies.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 300px; 
+                background-color: #2C3E50; 
+                border-radius: 12px; 
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 40px; color: #dc3545;">🎓</span>
+                <h3 style="color: #8A2BE2; margin-top: 15px; font-size: 22px;">Senior High School (Grade 11-12)</h3>
+                <p style="color: #B0C4DE; font-size: 14px;">College readiness, specialization, and vocational training pathways.</p>
+            </a>
+            
+            <a href="#" style="
+                text-decoration: none;
+                width: 300px; 
+                background-color: #2C3E50; 
+                border-radius: 12px; 
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                text-align: center;
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 40px; color: #17a2b8;">📘</span>
+                <h3 style="color: #8A2BE2; margin-top: 15px; font-size: 22px;">Higher Education & Research</h3>
+                <p style="color: #B0C4DE; font-size: 14px;">University-level articles, journals, and specialty textbooks.</p>
+            </a>
+
+        </div>
+    </main>
+
+    <footer style="background-color: #1E2A38; color: #E6E6FA; text-align: center; padding: 20px; position: relative; width: 100%; border-top: 1px solid #2C3E50;">
+        <p style="margin: 0; font-size: 14px;">&copy; 2025 Lumen Search | A non-profit collective dedicated to Free Global Education</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('side-nav');
+            if (nav.style.left === '-250px' || nav.style.left === '') {
+                nav.style.left = '0px'; // Slide in
+            } else {
+                nav.style.left = '-250px'; // Slide out
+            }
+        }
+    </script>
+
+</body>
+</html>

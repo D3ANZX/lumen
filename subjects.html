@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Search - Academic Subjects</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #1E2A38; color: #E6E6FA;"> 
+    
+    <aside id="side-nav" style="
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initial Hidden State */
+        width: 250px;
+        height: 100%;
+        background-color: #1E2A38; /* Primary Dark Blue */
+        color: #E6E6FA;
+        padding-top: 60px; 
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+        transition: left 0.3s ease; 
+        box-sizing: border-box;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+            <h3 style="margin: 0; font-size: 20px;">Explore Lumen</h3>
+            <button onclick="toggleNav()" style="
+                background: none; 
+                border: none; 
+                color: #E6E6FA; 
+                font-size: 30px; 
+                cursor: pointer;
+                line-height: 1;
+                padding: 0;
+            ">
+                &times;
+            </button>
+        </div>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 5px;">
+                <a href="index.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">🏠 Home Search</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="resources.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📘 Resources</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="about.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">ℹ️ About Lumen</a>
+            </li>
+        </ul>
+    </aside>
+
+    <header style="background-color: #1E2A38; color: #E6E6FA; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">
+        
+        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 20px;" 
+             onclick="toggleNav()">
+            ☰
+        </div>
+        
+        <img src="lumen.png" alt="lumen" style="height: 60px; border-radius: 60px; margin-right: 10px">
+        <div style="cursor: pointer; flex-grow: 1;">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                <h1 style="font-size: 28px; margin: 0; color: #E6E6FA;">Lumen Search</h1>
+                <p style="font-size: 14px; margin: 0; opacity: 0.8;">connecting the world to knowledge</p>
+            </a>
+        </div>
+        
+        <nav style="flex-shrink: 0;">
+            <a href="#" style="color: #E6E6FA; text-decoration: underline; margin-left: 25px; font-weight: bold;">Subjects</a>
+            <a href="resources.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Resources</a>
+            <a href="about.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">About</a>
+        </nav>
+    </header>
+
+    <main style="padding: 40px 10%; min-height: 80vh;">
+        <h2 style="font-size: 32px; color: #8A2BE2; /* Violet Heading */ margin-bottom: 10px; text-align: center;">🎓 Academic Subjects Directory</h2>
+        <p style="text-align: center; color: #B0C4DE; /* Light Gray */ margin-bottom: 40px; font-size: 16px;">Explore resources and content categorized by major areas of study.</p>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            
+            <a href="#" style="
+                text-decoration: none;
+                width: 350px; 
+                background-color: #2C3E50; /* Secondary Dark Shade */
+                border-top: 5px solid #8A2BE2; /* Violet accent */
+                border-radius: 8px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 30px; color: #8A2BE2;">🕊️</span>
+                <h3 style="color: #E6E6FA; /* Light Text */ margin-top: 10px; font-size: 24px;">Religion & Values Formation</h3>
+                <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 15px;">**Core Catholicism, Morality, Social Teachings.**</p>
+                <p style="color: #B0C4DE; font-size: 14px;">Resources dedicated to spiritual growth and character development.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 350px; 
+                background-color: #2C3E50; 
+                border-top: 5px solid #28a745; /* Green accent */
+                border-radius: 8px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 30px; color: #28a745;">➗</span>
+                <h3 style="color: #E6E6FA; margin-top: 10px; font-size: 24px;">Mathematics & Logic</h3>
+                <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 15px;">**Algebra, Geometry, Calculus, Statistics.**</p>
+                <p style="color: #B0C4DE; font-size: 14px;">Covers essential mathematical principles, from foundational arithmetic to advanced problem-solving.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 350px; 
+                background-color: #2C3E50; 
+                border-top: 5px solid #17a2b8; /* Cyan accent */
+                border-radius: 8px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 30px; color: #17a2b8;">🧬</span>
+                <h3 style="color: #E6E6FA; margin-top: 10px; font-size: 24px;">Science & ICT</h3>
+                <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 15px;">**Biology, Chemistry, Physics, Computer Skills.**</p>
+                <p style="color: #B0C4DE; font-size: 14px;">Exploration of the natural world and training in skills for a technologically driven society.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 350px; 
+                background-color: #2C3E50; 
+                border-top: 5px solid #ffc107; /* Yellow accent */
+                border-radius: 8px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 30px; color: #ffc107;">✍️</span>
+                <h3 style="color: #E6E6FA; margin-top: 10px; font-size: 24px;">Languages & Filipino</h3>
+                <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 15px;">**English, Filipino, Literature, Communication.**</p>
+                <p style="color: #B0C4DE; font-size: 14px;">Developing strong communication, reading, and writing skills in both local and international languages.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 350px; 
+                background-color: #2C3E50; 
+                border-top: 5px solid #dc3545; /* Red accent */
+                border-radius: 8px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 30px; color: #dc3545;">🌎</span>
+                <h3 style="color: #E6E6FA; margin-top: 10px; font-size: 24px;">Social Sciences & History</h3>
+                <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 15px;">**Araling Panlipunan, Economics, Geography, Civics.**</p>
+                <p style="color: #B0C4DE; font-size: 14px;">Study of human society, culture, governance, and history to foster responsible citizenship.</p>
+            </a>
+
+            <a href="#" style="
+                text-decoration: none;
+                width: 350px; 
+                background-color: #2C3E50; 
+                border-top: 5px solid #6c757d; /* Gray accent */
+                border-radius: 8px; 
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+                padding: 25px; 
+                transition: transform 0.3s, box-shadow 0.3s;
+                cursor: pointer;
+            " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 15px rgba(0, 0, 0, 0.6)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.4)'">
+                <span style="font-size: 30px; color: #6c757d;">🎨</span>
+                <h3 style="color: #E6E6FA; margin-top: 10px; font-size: 24px;">MAPEH & Arts</h3>
+                <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 15px;">**Music, Arts, PE, Health, Vocational Skills.**</p>
+                <p style="color: #B0C4DE; font-size: 14px;">Encouraging creativity, physical wellness, and practical life skills (Technology and Livelihood Education).</p>
+            </a>
+
+        </div>
+    </main>
+
+    <footer style="background-color: #1E2A38; color: #E6E6FA; text-align: center; padding: 20px; position: relative; width: 100%; border-top: 1px solid #2C3E50;">
+        <p style="margin: 0; font-size: 14px;">&copy; 2025 Lumen Search | A non-profit collective dedicated to Free Global Education</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('side-nav');
+            if (nav.style.left === '-250px' || nav.style.left === '') {
+                nav.style.left = '0px'; // Slide in
+            } else {
+                nav.style.left = '-250px'; // Slide out
+            }
+        }
+    </script>
+
+</body>
+</html>

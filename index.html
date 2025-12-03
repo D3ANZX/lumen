@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Search - Connecting the World to Knowledge</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #1E2A38; color: #E6E6FA;"> 
+    
+    <aside id="side-nav" style="
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initial Hidden State */
+        width: 250px;
+        height: 100%;
+        background-color: #1E2A38; /* Primary Dark Blue */
+        color: #E6E6FA;
+        padding-top: 60px; 
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+        transition: left 0.3s ease; 
+        box-sizing: border-box;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+            <h3 style="margin: 0; font-size: 20px;">Explore Categories</h3>
+            <button onclick="toggleNav()" style="
+                background: none; 
+                border: none; 
+                color: #E6E6FA; 
+                font-size: 30px; 
+                cursor: pointer;
+                line-height: 1;
+                padding: 0;
+            ">
+                &times;
+            </button>
+        </div>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">🧪 Science & Math</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📜 Humanities & Arts</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">💻 Technology & Programming</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">💰 Business & Finance</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="resources.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📄 Research Articles</a>
+            </li>
+        </ul>
+    </aside>
+
+    <header style="background-color: #1E2A38; color: #E6E6FA; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">
+        
+        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 20px;" 
+             onclick="toggleNav()">
+            ☰
+        </div>
+        
+        <img src="lumen.png" alt="lumen" style="height: 60px; border-radius: 60px; margin-right: 10px">
+        <div style="cursor: pointer; flex-grow: 1;">
+            <h1 style="font-size: 28px; margin: 0; color: #E6E6FA;">Lumen Search</h1>
+            <p style="font-size: 14px; margin: 0; opacity: 0.8;">connecting the world to knowledge</p>
+        </div>
+        
+        <nav style="flex-shrink: 0;">
+            <a href="subjects.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Subjects</a>
+            <a href="resources.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Resources</a>
+            <a href="about.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">About</a>
+        </nav>
+    </header>
+
+    <main style="
+        text-align: center; 
+        padding: 100px 20px; 
+        min-height: 500px; 
+        position: relative; 
+        overflow: hidden;
+    ">
+        <div style="
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1; /* Below content */
+            /* Background Image Properties */
+            background-image: url('https://media.istockphoto.com/id/1322301439/vector/educational-communication-concept.jpg?s=612x612&w=0&k=20&c=pBrQoX3OskLhHNPGZTam7AybU_G9yKbHHuRgmLWW6a4=');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Dark Overlay for blend-mode effect */
+            background-color: rgba(30, 42, 56, 0.9); /* High opacity of the primary dark blue */
+            background-blend-mode: multiply; /* Blend the color and image to create a dark, subtle background */
+        "></div>
+
+        <div style="position: relative; z-index: 10;"> 
+            <h2 style="font-size: 40px; color: #8A2BE2; margin-bottom: 20px; text-shadow: 0 0 5px rgba(0,0,0,0.5);">Illuminate your learning journey.</h2>
+            
+            <div style="max-width: 600px; margin: 0 auto; background-color: #2C3E50; /* Lighter Dark Shade */ border-radius: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); display: flex; align-items: center; padding: 10px 20px; border: 1px solid #8A2BE2;">
+                <span style="font-size: 20px; color: #8A2BE2; margin-right: 10px;">🔍</span>
+                <input type="text" placeholder="Search for concepts, courses, textbooks, or research papers..." style="flex-grow: 1; background-color: transparent; color: #E6E6FA; border: none; padding: 10px 0; font-size: 16px; outline: none;">
+                <a href="search.html">
+                <button style="background-color: #8A2BE2; color: white; border: none; padding: 10px 20px; border-radius: 20px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6A1AAB'" onmouseout="this.style.backgroundColor='#8A2BE2'">
+                    Search
+                </button>
+                </a>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <p style="color: #E6E6FA; font-size: 16px; margin-bottom: 15px;">**Trending Topics:**</p>
+                <div style="padding: 10px; border-radius: 15px; display: inline-block;">
+                    <a href="#" style="color: #8A2BE2; text-decoration: none; margin: 0 10px; padding: 8px 18px; border: 1px solid #8A2BE2; border-radius: 20px; font-size: 14px; transition: background-color 0.3s; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#6A1AAB'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#8A2BE2';">Quantum Computing</a>
+                    <a href="#" style="color: #8A2BE2; text-decoration: none; margin: 0 10px; padding: 8px 18px; border: 1px solid #8A2BE2; border-radius: 20px; font-size: 14px; transition: background-color 0.3s; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#6A1AAB'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#8A2BE2';">History of Rome</a>
+                    <a href="#" style="color: #8A2BE2; text-decoration: none; margin: 0 10px; padding: 8px 18px; border: 1px solid #8A2BE2; border-radius: 20px; font-size: 14px; transition: background-color 0.3s; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#6A1AAB'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#8A2BE2';">Cell Mitosis</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer style="background-color: #1E2A38; color: #E6E6FA; text-align: center; padding: 20px; position: relative; width: 100%; border-top: 1px solid #2C3E50;">
+        <p style="margin: 0; font-size: 14px;">&copy; 2025 Lumen Search | Precious Anjela A. Gas | A non-profit collective dedicated to Free Global Education</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('side-nav');
+            if (nav.style.left === '-250px' || nav.style.left === '') {
+                nav.style.left = '0px'; // Slide in
+            } else {
+                nav.style.left = '-250px'; // Slide out
+            }
+        }
+    </script>
+
+</body>
+</html>

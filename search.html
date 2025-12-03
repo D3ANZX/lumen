@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumen Search Results - Principles of Physics</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #1E2A38; color: #E6E6FA;"> 
+    
+    <aside id="side-nav" style="
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initial Hidden State */
+        width: 250px;
+        height: 100%;
+        background-color: #1E2A38; /* Primary Dark Blue */
+        color: #E6E6FA;
+        padding-top: 60px; 
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
+        transition: left 0.3s ease; 
+        box-sizing: border-box;
+    ">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+            <h3 style="margin: 0; font-size: 20px;">Explore Categories</h3>
+            <button onclick="toggleNav()" style="
+                background: none; 
+                border: none; 
+                color: #E6E6FA; 
+                font-size: 30px; 
+                cursor: pointer;
+                line-height: 1;
+                padding: 0;
+            ">
+                &times;
+            </button>
+        </div>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">🧪 Science & Math</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📜 Humanities & Arts</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">💻 Technology & Programming</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">💰 Business & Finance</a>
+            </li>
+            <li style="margin-bottom: 5px;">
+                <a href="resources.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📄 Research Articles</a>
+            </li>
+        </ul>
+    </aside>
+
+    <header style="background-color: #1E2A38; color: #E6E6FA; padding: 15px 50px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">
+        
+        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 20px;" 
+             onclick="toggleNav()">
+            ☰
+        </div>
+        
+        <div style="cursor: pointer; margin-right: 40px;">
+            <a href="index.html" style="color: inherit; text-decoration: none;">
+                <h1 style="font-size: 24px; margin: 0; color: #E6E6FA;">Lumen Search</h1>
+            </a>
+        </div>
+        
+        <div style="flex-grow: 1; max-width: 550px; background-color: #2C3E50; border-radius: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); display: flex; align-items: center; padding: 5px 15px; border: 1px solid #8A2BE2;">
+            <span style="font-size: 16px; color: #8A2BE2; margin-right: 10px;">🔍</span>
+            <input type="text" value="Principles of Physics" style="flex-grow: 1; background-color: transparent; color: #E6E6FA; border: none; padding: 8px 0; font-size: 14px; outline: none;">
+            <button style="background-color: #8A2BE2; color: white; border: none; padding: 6px 15px; border-radius: 15px; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6A1AAB'" onmouseout="this.style.backgroundColor='#8A2BE2'">
+                Go
+            </button>
+        </div>
+        
+        <nav style="flex-shrink: 0; margin-left: 30px;">
+            <a href="subjects.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Subjects</a>
+            <a href="resources.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Resources</a>
+            <a href="about.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">About</a>
+        </nav>
+    </header>
+
+    <nav style="background-color: #2C3E50; padding: 10px 50px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: flex-start; gap: 30px;">
+            <li>
+                <a href="#" style="color: #8A2BE2; text-decoration: none; font-weight: bold; padding: 5px 0; border-bottom: 2px solid #8A2BE2;">All (12,400)</a>
+            </li>
+            <li>
+                <a href="#" style="color: #B0C4DE; text-decoration: none; padding: 5px 0;" onmouseover="this.style.color='#E6E6FA'" onmouseout="this.style.color='#B0C4DE'">Images (980)</a>
+            </li>
+            <li>
+                <a href="#" style="color: #B0C4DE; text-decoration: none; padding: 5px 0;" onmouseover="this.style.color='#E6E6FA'" onmouseout="this.style.color='#B0C4DE'">Videos (420)</a>
+            </li>
+            <li>
+                <a href="#" style="color: #B0C4DE; text-decoration: none; padding: 5px 0;" onmouseover="this.style.color='#E6E6FA'" onmouseout="this.style.color='#B0C4DE'">Ebooks (180)</a>
+            </li>
+            <li>
+                <a href="#" style="color: #B0C4DE; text-decoration: none; padding: 5px 0;" onmouseover="this.style.color='#E6E6FA'" onmouseout="this.style.color='#B0C4DE'">Articles (7,800)</a>
+            </li>
+            <li>
+                <a href="#" style="color: #B0C4DE; text-decoration: none; padding: 5px 0;" onmouseover="this.style.color='#E6E6FA'" onmouseout="this.style.color='#B0C4DE'">Documents (3,020)</a>
+            </li>
+        </ul>
+    </nav>
+    <main style="padding: 20px 50px; min-height: 80vh;">
+        <p style="color: #B0C4DE; font-size: 14px; margin-bottom: 20px;">
+            About 12,400 results found in 0.45 seconds.
+        </p>
+
+        <div style="background-color: #2C3E50; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); text-align: left; border-left: 5px solid #17a2b8;">
+            <a href="#" style="color: #17a2b8; text-decoration: none; font-size: 20px; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                The Feynman Lectures on Physics, Volume 1: Mainly Mechanics, Radiation, and Heat
+            </a>
+            <p style="color: #B0C4DE; font-size: 14px; margin: 5px 0;">
+                <span style="color: #28a745;">https://lumensearch.org/library/ebooks/feynman_vol1</span> 
+                | **Type:** Ebook | **Subject:** Physics, Mechanics
+            </p>
+            <p style="color: #E6E6FA; font-size: 16px; margin: 10px 0 0;">
+                The first volume of the legendary physics course, focusing on classical mechanics, optics, and thermodynamics. Essential reading for all serious students of science.
+            </p>
+        </div>
+
+        <div style="background-color: #2C3E50; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); text-align: left; border-left: 5px solid #8A2BE2;">
+            <a href="#" style="color: #8A2BE2; text-decoration: none; font-size: 20px; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                Understanding Newton's Three Laws of Motion (Video Lecture)
+            </a>
+            <p style="color: #B0C4DE; font-size: 14px; margin: 5px 0;">
+                <span style="color: #28a745;">https://lumensearch.org/video/newton_laws</span> 
+                | **Type:** Video | **Subject:** Physics, Classical Mechanics
+            </p>
+            <p style="color: #E6E6FA; font-size: 16px; margin: 10px 0 0;">
+                An interactive video lecture series explaining the core principles of classical mechanics using real-world examples and 3D simulations. (Duration: 15:30)
+            </p>
+        </div>
+        
+        <div style="background-color: #2C3E50; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); text-align: left; border-left: 5px solid #ffc107;">
+            <a href="#" style="color: #ffc107; text-decoration: none; font-size: 20px; font-weight: bold;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                Review Article: The Quantum Realm and its Implications for Particle Physics
+            </a>
+            <p style="color: #B0C4DE; font-size: 14px; margin: 5px 0;">
+                <span style="color: #28a745;">https://lumensearch.org/articles/quantum_review_2024</span> 
+                | **Type:** Article | **Subject:** Modern Physics, Quantum Mechanics
+            </p>
+            <p style="color: #E6E6FA; font-size: 16px; margin: 10px 0 0;">
+                A peer-reviewed article summarizing recent breakthroughs in quantum entanglement experiments and their technological potential.
+            </p>
+        </div>
+
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="#" style="color: #B0C4DE; padding: 10px 15px; text-decoration: none; margin: 0 5px; border-radius: 5px; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#8A2BE2'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#B0C4DE';">Previous</a>
+            <span style="color: #E6E6FA; padding: 10px 15px; margin: 0 5px; border-radius: 5px; background-color: #8A2BE2; font-weight: bold;">1</span>
+            <a href="#" style="color: #B0C4DE; padding: 10px 15px; text-decoration: none; margin: 0 5px; border-radius: 5px; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#8A2BE2'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#B0C4DE';">2</a>
+            <a href="#" style="color: #B0C4DE; padding: 10px 15px; text-decoration: none; margin: 0 5px; border-radius: 5px; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#8A2BE2'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#B0C4DE';">3</a>
+            <span style="color: #B0C4DE; padding: 10px 15px; margin: 0 5px;">...</span>
+            <a href="#" style="color: #B0C4DE; padding: 10px 15px; text-decoration: none; margin: 0 5px; border-radius: 5px; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#8A2BE2'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#B0C4DE';">Next</a>
+        </div>
+    </main>
+
+    <footer style="background-color: #1E2A38; color: #E6E6FA; text-align: center; padding: 20px; position: relative; width: 100%; border-top: 1px solid #2C3E50;">
+        <p style="margin: 0; font-size: 14px;">&copy; 2025 Lumen Search | A non-profit collective dedicated to Free Global Education</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('side-nav');
+            if (nav.style.left === '-250px' || nav.style.left === '') {
+                nav.style.left = '0px'; // Slide in
+            } else {
+                nav.style.left = '-250px'; // Slide out
+            }
+        }
+    </script>
+
+</body>
+</html>
