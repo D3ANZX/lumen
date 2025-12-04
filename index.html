@@ -4,29 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumen Search - Connecting the World to Knowledge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Define Colors and Typography */
+        :root {
+            --color-primary-dark: #0D1117; /* Deep Space Background */
+            --color-secondary-dark: #161B22; /* Panel/Header Background */
+            --color-accent-purple: #BB86FC; /* Original Accent */
+            --color-accent-blue: #003cff; /* New Blue Accent */
+            --color-accent-yellow: #c8ff00; /* Neon Yellow Accent */
+            --color-text-light: #E6E6FA; /* Lavender Text */
+            --font-main: 'Poppins', sans-serif;
+            --font-title: 'Mea Culpa', cursive;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
+            overflow-x: hidden;
+        }
+
+        /* --- Header Styles --- */
+        .header {
+            background-color: var(--color-secondary-dark);
+            color: var(--color-text-light);
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 500;
+        }
+
+        .header-title {
+            font-family: var(--font-title);
+            font-size: 32px;
+            margin: 0;
+            color: white; /* Title color set to white as per your latest input */
+            line-height: 1;
+        }
+
+        .header-tagline {
+            font-size: 11px;
+            margin: 0;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-nav a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        /* Set mouseover styles for navigation links */
+        .header-nav a:hover {
+            background-color: var(--color-accent-purple);
+            color: var(--color-primary-dark);
+        }
+
+        /* --- Side Navigation Styles --- */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Initial Hidden State */
+            width: 250px;
+            height: 100%;
+            background-color: var(--color-secondary-dark);
+            color: var(--color-text-light);
+            padding-top: 60px; 
+            z-index: 1000;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.8);
+            transition: left 0.3s ease-in-out; 
+            box-sizing: border-box;
+        }
+
+        .side-nav-explore {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-accent-purple);
+        }
+
+        .side-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-nav a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: background-color 0.3s, border-left 0.3s;
+        }
+        
+        /* Set mouseover styles for side nav links */
+        .side-nav a:hover {
+            background-color: #1f252d; 
+            border-left: 3px solid var(--color-accent-purple);
+        }
+
+        /* --- Main Content Styles --- */
+        .main-content {
+            text-align: center; 
+            padding: 80px 10px 120px;
+            min-height: 500px; 
+            position: relative; 
+            overflow: hidden;
+        }
+
+        .main-bg-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1; 
+            background-image: url('heroes.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+            background-blend-mode: multiply; 
+        }
+
+        .main-title {
+            font-family: var(--font-title);
+            font-weight: 500;
+            font-size: 70px;
+            color: var(--color-accent-yellow); /* Neon Yellow */
+            margin-bottom: 30px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+        }
+        
+        /* Search Bar */
+        .search-bar-container {
+            width: 90%;
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: var(--color-secondary-dark);
+            border-radius: 50px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            border: 2px solid var(--color-accent-blue); /* Blue border */
+        }
+
+        .search-input {
+            flex-grow: 1;
+            background-color: transparent;
+            color: var(--color-text-light);
+            border: none;
+            padding: 12px 0;
+            font-size: 16px;
+            outline: none;
+            caret-color: #0400f9; /* Blue caret */
+        }
+
+        .search-button {
+            background-color: #2600ff; /* Blue button */
+            color: #ffffff;
+            font-weight: 600;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Adjusted search button hover to make sense with the new blue/red scheme */
+        .search-button:hover {
+            background-color: #0019ff; /* Darker blue on hover */
+        }
+
+        /* Feature Hub */
+        .feature-hub-title {
+            color: #e5ff00; /* Neon Yellow */
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .feature-grid {
+            width: 90%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 15px; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            justify-content: center; 
+            gap: 15px;
+        }
+        
+        /* Feature Button Base Style */
+        .feature-link {
+            color: #fefefe;
+            text-decoration: none;
+            padding: 12px 10px;
+            border: 1px solid #f00707; /* Red Border */
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s;
+            background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent Red Background */
+            font-weight: 400;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Feature Button Hover Style (Added for interactivity, matches original intent) */
+        .feature-link:hover {
+             background-color: #ff0000; /* Solid Red on hover */
+             box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        /* --- Footer Styles --- */
+        .footer {
+            background-color: var(--color-secondary-dark);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 20px 10px;
+            position: relative;
+            width: 100%;
+            border-top: 3px solid var(--color-accent-purple); /* Border remains purple */
+        }
+
+        /* --- Media Queries for Responsiveness (Mobile-First) --- */
+        
+        /* Hide Desktop Navigation on smaller screens */
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+            .main-title {
+                font-size: 48px; /* Reduce large text size on mobile */
+            }
+            .feature-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Allow more columns to collapse */
+            }
+        }
+
+        /* Show Desktop Navigation on larger screens */
+        @media (min-width: 769px) {
+            .header-nav {
+                display: flex;
+            }
+            #menu-icon {
+                display: none; /* Hide the menu icon on desktop */
+            }
+        }
+        
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #1E2A38; color: #E6E6FA;"> 
+<body> 
     
-    <aside id="side-nav" style="
-        position: fixed;
-        top: 0;
-        left: -250px; /* Initial Hidden State */
-        width: 250px;
-        height: 100%;
-        background-color: #1E2A38;
-        color: #E6E6FA;
-        padding-top: 60px; 
-        z-index: 1000;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.6);
-        transition: left 0.3s ease; 
-        box-sizing: border-box;
-    ">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
-            <h3 style="margin: 0; font-size: 20px;">Explore Categories</h3>
+    <aside id="side-nav" class="side-nav">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px 10px;">
+            <h3 class="side-nav-explore">EXPLORE</h3>
             <button onclick="toggleNav()" style="
                 background: none; 
                 border: none; 
-                color: #E6E6FA; 
+                color: var(--color-accent-purple); 
                 font-size: 30px; 
                 cursor: pointer;
                 line-height: 1;
@@ -36,103 +289,98 @@
             </button>
         </div>
         <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">
-                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">🧪 Science & Math</a>
+            <li style="margin-bottom: 2px;">
+                <a href="subjects.html">🧪 Science & Math</a>
             </li>
-            <li style="margin-bottom: 5px;">
-                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📜 Humanities & Arts</a>
+            <li style="margin-bottom: 2px;">
+                <a href="subjects.html">📜 Humanities & Arts</a>
             </li>
-            <li style="margin-bottom: 5px;">
-                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">💻 Technology & Programming</a>
+            <li style="margin-bottom: 2px;">
+                <a href="subjects.html">💻 Technology & Programming</a>
             </li>
-            <li style="margin-bottom: 5px;">
-                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">💰 Business & Finance</a>
+            <li style="margin-bottom: 2px;">
+                <a href="subjects.html">💰 Business & Finance</a>
             </li>
-            <li style="margin-bottom: 5px;">
-                <a href="resources.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none; background-color: rgba(255, 255, 255, 0.05);" onmouseover="this.style.backgroundColor='#8A2BE2'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.05)'">📄 Research Articles</a>
+            <li style="margin-bottom: 2px;">
+                <a href="resources.html">📄 Research Articles</a>
             </li>
-            <li style="margin-top: 20px;">
-                <a href="subjects.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none;">Subjects</a>
+            
+            <li style="margin-top: 20px; border-top: 1px solid #2C3E50;"></li>
+
+            <li>
+                <a href="subjects.html">Subjects</a>
             </li>
             <li>
-                <a href="resources.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none;">Resources</a>
+                <a href="resources.html">Resources</a>
             </li>
             <li>
-                <a href="about.html" style="display: block; padding: 10px 20px; color: #E6E6FA; text-decoration: none;">About</a>
+                <a href="about.html">About</a>
             </li>
         </ul>
     </aside>
 
-    <header style="background-color: #1E2A38; color: #E6E6FA; padding: 15px 20px; display: flex; flex-wrap: wrap; align-items: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);">
+    <header class="header">
         
-        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 10px;" 
+        <div id="menu-icon" style="cursor: pointer; font-size: 24px; padding: 5px 10px; margin-right: 15px; color: var(--color-accent-purple);" 
              onclick="toggleNav()">
             ☰
         </div>
         
         <div style="display: flex; align-items: center; flex-grow: 1;">
-            <img src="lumen.png" alt="lumen" style="height: 40px; width: 40px; border-radius: 40px; margin-right: 10px;">
+            <img src="logo.png" alt="lumen" style="height: 35px; width: 35px; border-radius: 50%; margin-right: 10px; border: 2px solid #ccff00;">
             <div style="cursor: pointer;">
-                <h1 style="font-size: 22px; margin: 0; color: #E6E6FA;">Lumen Search</h1>
-                <p style="font-size: 12px; margin: 0; opacity: 0.8; display: none; /* Hide tagline on very small screens */">connecting the world to knowledge</p>
+                <h1 class="header-title">Tala-Saliksik</h1>
+                <p class="header-tagline"> <u>connecting the world to knowledge </u></p>
             </div>
         </div>
         
-        <nav style="flex-shrink: 0; display: none;">
-            <a href="subjects.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Subjects</a>
-            <a href="resources.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">Resources</a>
-            <a href="about.html" style="color: #E6E6FA; text-decoration: none; margin-left: 25px;">About</a>
+        <nav class="header-nav">
+            <a href="about.html">Kids Mode</a>
+            <a href="about.html">Data Saver Mode</a>
+            <a href="subjects.html">Subjects</a>
+            <a href="resources.html">Resources</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
-    <main style="
-        text-align: center; 
-        padding: 50px 10px; /* Reduced vertical padding */
-        min-height: 500px; 
-        position: relative; 
-        overflow: hidden;
-    ">
-        <div style="
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            z-index: 1; /* Below content */
-            /* Background Image Properties */
-            background-image: url('https://media.istockphoto.com/id/1322301439/vector/educational-communication-concept.jpg?s=612x612&w=0&k=20&c=pBrQoX3OskLhHNPGZTam7AybU_G9yKbHHuRgmLWW6a4=');
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-            /* Dark Overlay for blend-mode effect */
-            background-color: rgba(30, 42, 56, 0.9); 
-            background-blend-mode: multiply; 
-        "></div>
+    <main class="main-content">
+        <div class="main-bg-overlay"></div>
 
         <div style="position: relative; z-index: 10;"> 
-            <h2 style="font-size: 28px; color: #8A2BE2; margin-bottom: 20px; text-shadow: 0 0 5px rgba(0,0,0,0.5);">Illuminate your learning journey.</h2>
+            <h2 class="main-title"> 
+                <i>Magkalap ng kaalaman, payamanin ang isipan</i>
+            </h2>
             
-            <div style="width: 90%; max-width: 600px; margin: 0 auto; background-color: #2C3E50; border-radius: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); display: flex; align-items: center; padding: 10px 15px; border: 1px solid #8A2BE2;">
-                <span style="font-size: 20px; color: #8A2BE2; margin-right: 10px;">🔍</span>
-                <input type="text" placeholder="Search for concepts, courses, textbooks, or research papers..." style="flex-grow: 1; background-color: transparent; color: #E6E6FA; border: none; padding: 10px 0; font-size: 14px; outline: none;">
+            <div class="search-bar-container">
+                <span style="font-size: 22px; color: var(--color-accent-purple); margin: 0 10px 0 15px;">🔎</span>
+                <input type="text" placeholder="Manaliksik ng mga aklat, documento, artikulo atbp." class="search-input">
                 <a href="search.html" style="text-decoration: none;">
-                    <button style="background-color: #8A2BE2; color: white; border: none; padding: 10px 15px; border-radius: 20px; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#6A1AAB'" onmouseout="this.style.backgroundColor='#8A2BE2'">
+                    <button class="search-button">
                         Search
                     </button>
                 </a>
             </div>
 
-            <div style="margin-top: 40px;">
-                <p style="color: #E6E6FA; font-size: 16px; margin-bottom: 15px;">**Trending Topics:**</p>
-                <div style="padding: 10px; border-radius: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-                    <a href="#" style="color: #8A2BE2; text-decoration: none; padding: 8px 18px; border: 1px solid #8A2BE2; border-radius: 20px; font-size: 14px; transition: background-color 0.3s; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#6A1AAB'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#8A2BE2';">Quantum Computing</a>
-                    <a href="#" style="color: #8A2BE2; text-decoration: none; padding: 8px 18px; border: 1px solid #8A2BE2; border-radius: 20px; font-size: 14px; transition: background-color 0.3s; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#6A1AAB'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#8A2BE2';">History of Rome</a>
-                    <a href="#" style="color: #8A2BE2; text-decoration: none; padding: 8px 18px; border: 1px solid #8A2BE2; border-radius: 20px; font-size: 14px; transition: background-color 0.3s; background-color: #2C3E50;" onmouseover="this.style.backgroundColor='#6A1AAB'; this.style.color='#E6E6FA';" onmouseout="this.style.backgroundColor='#2C3E50'; this.style.color='#8A2BE2';">Cell Mitosis</a>
+            <div style="margin-top: 60px;">
+                <p class="feature-hub-title">Feature Hub</p>
+                <div class="feature-grid">
+                    <a href="#" class="feature-link">DepEd Search</a>
+                    <a href="#" class="feature-link">Student Resources</a>
+                    <a href="#" class="feature-link">Sports & Wellness</a>
+                    <a href="#" class="feature-link">Sigurado Verified</a>
+                    <a href="#" class="feature-link">News Feed</a>
+                    <a href="#" class="feature-link">Hilayganon Resources</a>
+                    <a href="#" class="feature-link">Bisayan Knowledge</a>
+                    <a href="#" class="feature-link">Kapampangan Texts</a>
+                    <a href="#" class="feature-link">College Search</a>
                 </div>
             </div>
         </div>
 
     </main>
 
-    <footer style="background-color: #1E2A38; color: #E6E6FA; text-align: center; padding: 15px 10px; position: relative; width: 100%; border-top: 1px solid #2C3E50;">
-        <p style="margin: 0; font-size: 12px;">&copy; 2025 Lumen Search | A non-profit collective dedicated to Free Global Education</p>
+    <footer class="footer">
+        <p style="margin: 0; font-size: 13px; font-weight: 300;">&copy; 2025 Lumen Search | A non-profit collective dedicated to **Free Global Education**</p>
     </footer>
 
     <script>
